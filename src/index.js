@@ -1,15 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
 
-import App from './components/app';
-import reducers from './reducers';
+import TodoInput from "./components/todoInput";
+import TodoList from "./components/todoList";
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+export default class App extends Component {
+  render() {
+    return (
+      <div>
+        <h1>Todo React APP!</h1>
+        <TodoInput />
+        <br />
+        <TodoList />
+      </div>
+    );
+  }
+}
 
-ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
-  </Provider>
-  , document.querySelector('.container'));
+ReactDOM.render(<App />, document.querySelector(".container"));
