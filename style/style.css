@@ -1,3 +1,10 @@
-#addButton {
-  margin-left: 10px;
+.floatLeft {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.deleteButton {
 }
